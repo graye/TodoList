@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Todo List';
-  todos:Array<TodoItem>;
+  todos:Array<ITodoItem<string>>;
   newTodo:string;
 
   constructor(){
@@ -20,6 +20,7 @@ export class AppComponent {
 
   addItem(){
     this.todos.push(new TodoItem(this.newTodo));
+
     this.newTodo = '';
   }
 }
@@ -30,6 +31,10 @@ class TodoItem implements ITodoItem<string>{
   constructor(c:string){
     this.content = c;
   }
+}
+
+class PictureTodoItem implements ITodoItem<number>{
+  content:number;
 }
 
 interface ITodoItem<T> {

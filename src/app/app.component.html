@@ -9,5 +9,5 @@
 </ul>
 
 
-<input type="text" placeholder="Type something here." [(ngModel)]="newTodo"/>
+<input type="text" placeholder="Type something here." (keydown.enter)="addItem()" [(ngModel)]="newTodo"/>
 <button (click)="addItem()">Add</button>
