@@ -1,0 +1,13 @@
+<h1>
+  {{title}}
+</h1>
+
+<ul>
+  <li *ngFor="let item of todos;let i = index;">
+    {{item.content}} <button (click)="removeItem(i)">X</button>
+  </li>
+</ul>
+
+
+<input type="text" placeholder="Type something here." [(ngModel)]="newTodo"/>
+<button (click)="addItem()">Add</button>
